@@ -1,6 +1,6 @@
 package okcoin
 
-import
+import//导入
 (
 	. "github.com/nntaoli/crypto_coin_api"
 	"strconv"
@@ -13,7 +13,7 @@ import
 	"fmt"
 )
 
-const
+const//只读的全局变量,其值不可修改
 (
 	EXCHANGE_NAME = "okcoin_cn";
 	api_base_url = "https://www.okcoin.cn/api/v1/";
@@ -30,19 +30,20 @@ const
 	order_history_uri = "order_history.do";
 )
 
-type OKCoinCN_API struct{
+type OKCoinCN_API struct//定义标识符OKCoinCN_API
+{
 	client *http.Client
 	api_key string
 	secret_key string
 }
 
-func currencyPair2String(currency CurrencyPair) string{
-	switch currency{
-		case BTC_CNY:
-			return "btc_cny";
-		case LTC_CNY:
+func currencyPair2String(currency CurrencyPair) string{//函数 货币流通（货币流通）字符串
+	switch currency{//判断选择
+		case BTC_CNY://情况BTC_CNY
+			return "btc_cny";//返回btc_cny
+		case LTC_CNY://情况LTC_CNY
 			return "ltc_cny";
-		default:
+		default://其他情况
 			return "";
 	}
 }
